@@ -1,0 +1,2 @@
+arm_description:arm_gazebo:ros_publisher_subcriber
+-DCATKIN_DEVEL_PREFIX=/home/lelo/Desktop/Robotics-Assignment/devel -DCMAKE_INSTALL_PREFIX=/home/lelo/Desktop/Robotics-Assignment/install -G Unix Makefiles

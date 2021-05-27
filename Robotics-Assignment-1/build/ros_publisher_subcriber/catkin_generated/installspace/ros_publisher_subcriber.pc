@@ -1,0 +1,8 @@
+prefix=/home/lelo/Desktop/Robotics-Assignment/install
+
+Name: ros_publisher_subcriber
+Description: Description of ros_publisher_subcriber
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: roscpp rospy std_msgs

@@ -1,0 +1,143 @@
+<?xml version='1.0'?>
+<sdf version='1.4'>
+  <model name="arm">
+  <static>false</static>
+  <link name="chassis">
+    <pose>0 0 .05 0 0 0</pose>
+    <collision name='collision'>
+            <geometry>
+                <cylinder>
+                  <radius>0.5</radius>
+                  <length>0.1</length>
+                </cylinder>
+              </geometry>
+            </collision>
+            <visual name='visual'>        
+              <geometry>
+                <cylinder>
+                  <radius>0.5</radius>
+                  <length>0.1</length>
+                </cylinder>
+              </geometry>
+            </visual>  
+    </link>
+    <link name="arm1">
+    <gravity>0</gravity>
+    <pose>0 0 0.125 0 0 0</pose>
+     <collision name='collision'>
+            <geometry>
+                <cylinder>
+                  <radius>0.1</radius>
+                  <length>0.05</length>
+                </cylinder>
+              </geometry>
+            </collision>
+            <visual name='visual'>        
+              <geometry>
+                <cylinder>
+                  <radius>0.1</radius>
+                  <length>0.05</length>
+                </cylinder>
+              </geometry>
+            </visual> 
+    
+    </link>
+    <link name="arm2">
+    <gravity>0</gravity>
+    <pose>0 0 1.15 0 0 0</pose>
+     <collision name='collision'>
+            <geometry>
+                <cylinder>
+                  <radius>0.05</radius>
+                  <length>2.0</length>
+                </cylinder>
+              </geometry>
+            </collision>
+            <visual name='visual'>        
+              <geometry>
+                <cylinder>
+                  <radius>0.05</radius>
+                  <length>2.0</length>
+                </cylinder>
+              </geometry>
+            </visual> 
+    
+    </link>
+    <link name="arm3">
+    <gravity>0</gravity>
+    <pose>0 0 2.65 0 0 0</pose>
+     <collision name='collision'>
+            <geometry>
+                <cylinder>
+                  <radius>0.05</radius>
+                  <length>1.0</length>
+                </cylinder>
+              </geometry>
+            </collision>
+            <visual name='visual'>        
+              <geometry>
+                <cylinder>
+                  <radius>0.05</radius>
+                  <length>1.0</length>
+                </cylinder>
+              </geometry>
+            </visual> 
+    
+    </link>
+    <link name="arm4">
+    <gravity>0</gravity>
+    <pose>0 0 3.4 0 0 0</pose>
+     <collision name='collision'>
+            <geometry>
+                <cylinder>
+                  <radius>0.05</radius>
+                  <length>0.5</length>
+                </cylinder>
+              </geometry>
+            </collision>
+            <visual name='visual'>        
+              <geometry>
+                <cylinder>
+                  <radius>0.05</radius>
+                  <length>0.5</length>
+                </cylinder>
+              </geometry>
+            </visual> 
+    
+    </link>
+    <joint name="chassis_arm1_joint" type="revolute">
+       <parent>chassis</parent>
+       <child>arm1</child>
+       <pose>0 0 -0.025 0 0</pose>
+       <axis>
+          <xyz> 0 0 1</xyz>
+       </axis>
+    </joint>
+    <joint name="arm1_arm2_joint" type="revolute">
+       <parent>arm1</parent>
+       <child>arm2</child>
+       <pose>0 0 -1 0 0 0</pose>
+       <axis>
+          <xyz> 1 0 0</xyz>
+       </axis>
+    </joint>
+    <joint name="arm2_arm3_joint" type="revolute">
+       <parent>arm2</parent>
+       <child>arm3</child>
+       <pose>0 0 -0.5 0 0 0</pose>
+       <axis>
+          <xyz> 1 0 0</xyz>
+       </axis>
+    </joint>
+    <joint name="arm3_arm4_joint" type="revolute">
+       <parent>arm3</parent>
+       <child>arm4</child>
+       <pose>0 0 -0.25 0 0 0</pose>
+       <axis>
+          <xyz> 1 0 0</xyz>
+       </axis>
+    </joint>
+
+   <plugin name="arm_control" filename="libarm_gazebo.so" />
+  </model>
+</sdf>
